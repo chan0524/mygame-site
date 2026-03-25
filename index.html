@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>미니 게임 공작소</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #f4f6fb;
+      font-family: Arial, sans-serif;
+      color: #222;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .wrap {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 16px 12px 28px;
+    }
+
+    .top {
+      margin-bottom: 18px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 0 0 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .desc {
+      margin: 0;
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #6c63ff, #8b80ff);
+      color: #fff;
+      border-radius: 20px;
+      padding: 20px 18px;
+      margin: 18px 0 20px;
+      box-shadow: 0 10px 24px rgba(108, 99, 255, 0.22);
+    }
+
+    .banner-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .banner-text {
+      font-size: 14px;
+      line-height: 1.5;
+      opacity: 0.95;
+    }
+
+    .section {
+      margin-top: 26px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin: 0 0 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+      transition: transform 0.15s ease;
+    }
+
+    .card:active {
+      transform: scale(0.98);
+    }
+
+    .thumb {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #ddd center center / cover no-repeat;
+    }
+
+    .card-body {
+      padding: 12px;
+    }
+
+    .game-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.35;
+      min-height: 40px;
+      margin-bottom: 6px;
+    }
+
+    .game-desc {
+      font-size: 12px;
+      color: #777;
+      line-height: 1.4;
+    }
+
+    .footer-space {
+      height: 20px;
+    }
+
+    @media (max-width: 360px) {
+      .title {
+        font-size: 24px;
+      }
+
+      .grid {
+        gap: 10px;
+      }
+
+      .card-body {
+        padding: 10px;
+      }
+
+      .game-title {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="top">
+      <h1 class="title">쉬는시간 게임</h1>
+      <p class="desc">
+        설치 없이 바로 즐기는 미니게임 모음
+      </p>
+    </div>
+
+    <div class="banner">
+      <div class="banner-title">오늘의 추천 게임</div>
+      <div class="banner-text">
+        가볍게 한 판 하고 싶을 때 바로 시작해보세요.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">인기 게임</h2>
+
+      <div class="grid">
+        <a class="card" href="game1.html">
+          <div class="thumb" style="background-image:url('https://via.placeholder.com/600x600?text=GAME+1');"></div>
+          <div class="card-body">
+            <div class="game-title">게임 1</div>
+            <div class="game-desc">짧게 즐기기 좋은 인기 게임</div>
+          </div>
+        </a>
+
+        <a class="card" href="game2.html">
+          <div class="thumb" style="background-image:url('https://via.placeholder.com/600x600?text=GAME+2');"></div>
+          <div class="card-body">
+            <div class="game-title">게임 2</div>
+            <div class="game-desc">설치 없이 바로 플레이 가능</div>
+          </div>
+        </a>
+
+        <a class="card" href="game3.html">
+          <div class="thumb" style="background-image:url('https://via.placeholder.com/600x600?text=GAME+3');"></div>
+          <div class="card-body">
+            <div class="game-title">게임 3</div>
+            <div class="game-desc">심심할 때 하기 좋은 미니게임</div>
+          </div>
+        </a>
+
+        <a class="card" href="game4.html">
+          <div class="thumb" style="background-image:url('https://via.placeholder.com/600x600?text=GAME+4');"></div>
+          <div class="card-body">
+            <div class="game-title">게임 4</div>
+            <div class="game-desc">간단한 조작으로 바로 시작</div>
+          </div>
+        </a>
+
+        <a class="card" href="game5.html">
+          <div class="thumb" style="background-image:url('https://via.placeholder.com/600x600?text=GAME+5');"></div>
+          <div class="card-body">
+            <div class="game-title">게임 5</div>
+            <div class="game-desc">한 판이 짧아서 부담 없음</div>
+          </div>
+        </a>
+
+        <a class="card" href="game6.html">
+          <div class="thumb" style="background-image:url('https://via.placeholder.com/600x600?text=GAME+6');"></div>
+          <div class="card-body">
+            <div class="game-title">게임 6</div>
+            <div class="game-desc">모바일에서도 편하게 플레이</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-space"></div>
+  </div>
+</body>
+</html>
