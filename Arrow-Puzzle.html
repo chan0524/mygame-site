@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>게임 플레이</title>
+  <title>Arrow Puzzle</title>
 
   <style>
     * {
@@ -17,6 +17,7 @@
       height: 100%;
       background: #000;
       overflow: hidden;
+      font-family: Arial, sans-serif;
     }
 
     .game-container {
@@ -25,26 +26,27 @@
       position: relative;
     }
 
-    iframe {
+    #game {
       width: 100%;
       height: 100%;
-      border: none;
-      display: block;
+      background: #000;
     }
 
     .top-bar {
       position: absolute;
       top: 10px;
       left: 10px;
-      z-index: 10;
+      z-index: 20;
     }
 
     .back-btn {
-      background: rgba(0,0,0,0.6);
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.6);
       color: #fff;
       padding: 8px 12px;
       border-radius: 10px;
       font-size: 13px;
+      text-decoration: none;
     }
 
     .loading {
@@ -55,26 +57,48 @@
       color: #fff;
       font-size: 16px;
       opacity: 0.7;
+      z-index: 5;
+      text-align: center;
+      width: 100%;
+      pointer-events: none;
     }
   </style>
 </head>
 
 <body>
-
   <div class="game-container">
-
-    <!-- 뒤로가기 버튼 -->
     <div class="top-bar">
       <a href="index.html" class="back-btn">← 목록으로</a>
     </div>
 
-    <!-- 로딩 -->
-    <div class="loading">게임 로딩중...</div>
-
-    <!-- 🔥 여기만 바꾸면 된다 -->
-    <iframe src="https://html5.gamedistribution.com/51867640b99c41adb872a4a1b3e4eb4e/?gd_sdk_referrer_url=https://gamedistribution.com/games/arrow-puzzle/"></iframe>
-
+    <div class="loading" id="loading">게임 로딩중...</div>
+    <div id="game"></div>
   </div>
 
+  <script>
+    window.GD_OPTIONS = {
+      gameId: "51867640b99c41adb872a4a1b3e4eb4e",
+      container: "game",
+      width: "100%",
+      height: "100%",
+      onEvent: function(event) {
+        switch (event.name) {
+          case "SDK_READY":
+          case "SDK_GAME_START":
+            document.getElementById("loading").style.display = "none";
+            break;
+        }
+      }
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://html5.api.gamedistribution.com/main.min.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, "script", "gamedistribution-jssdk"));
+  </script>
 </body>
 </html>
